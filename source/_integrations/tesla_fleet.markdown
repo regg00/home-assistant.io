@@ -74,8 +74,14 @@ tesla-control -ble -key-file tesla_fleet.key -vin VINVINVINVIN -debug add-key-re
 
 Finally, copy `tesla_fleet.key` to your Home Assistant config directory and then reload the Tesla Fleet {% term integration %}.
 
-If you get a message like this one `BLE connection attempt failed: failed to find BLE beacon for xxxxxxxxx (SxxxaeC): can't dial: failed to add connection: already exists: addr=d91a765d-272a-f224-8eda-xxxxx` you need to disable Bluetooth on you phone while in the car. For some reason, the tool doesn't connect when another Bluetooth device is already connected to the car.
+{% note title="Bluetooth Connection Issues" %}
+If you receive a "BLE connection attempt failed" error, follow these steps:
+1. Disable Bluetooth on your phone
+2. Execute the `tesla-control` command
+3. Re-enable Bluetooth after the command completes
 
+This is necessary because the tool cannot establish a connection while another Bluetooth device is connected to the car.
+{% endnote %}
 ## Entities
 
 These are the entities available in the Tesla Fleet integration. Not all entities are enabled by default, and not all values are always available.
