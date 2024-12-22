@@ -74,7 +74,7 @@ tesla-control -ble -key-file tesla_fleet.key -vin VINVINVINVIN -debug add-key-re
 
 Finally, copy `tesla_fleet.key` to your Home Assistant config directory and then reload the Tesla Fleet {% term integration %}.
 
-{% note title="Bluetooth Connection Issues" %}
+{% note %}
 If you receive a "BLE connection attempt failed" error, follow these steps:
 
 1. Disable Bluetooth on your phone
